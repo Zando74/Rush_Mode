@@ -1,0 +1,127 @@
+local L = LibStub("AceLocale-3.0"):NewLocale("RushMode", "enUS", true)
+
+if not L then return end
+
+L["ADDON_LOADED"] = "|cff00ff00RushMode loaded.|r"
+L["RUSH_INITIALIZED"] = "Rush initialized."
+L["RUSH_NOT_INITIALIZED"] = "Rush not initialized."
+L["PLAYER_INVITED"] = "Whitelist shared with %s."
+L["PLAYER_LOGIN"] = "Player logged in as %s."
+L["JOINED_TEAM"] = "Joined %s team."
+L["CHAR_TRACKING_STARTED"] = "tracking enabled for this character."
+L["CHAR_TRACKING_STOPPED"] = "tracking disabled for this character."
+
+L["INIT_TITLE"] = "Rush Initialization"
+L["INIT_PARTICIPANT"] = "Participant Name / Streamer"
+L["INIT_TEAM"] = "Team"
+L["INIT_KEY"] = "Rush Key"
+L["INIT_SAVE"] = "Save"
+L["MUST_FILL_FIELDS"] = "Please fill in all fields!"
+L["DATA_SAVED"] = "data saved!"
+
+L["COMM_REGISTERED"] = "|cff00ff00RushMode Communication initialized.|r"
+
+L["NOTIF_ENABLED"] = "Notifications : %s"
+
+L["MAINFRAME_TITLE"] = "Rush Mode - Participants list"
+
+L["MINIMAP_LINE"] = "Shift + drag to move the button"
+
+L["PLAYER_TOOLTIP"] = "Rush Mode :"
+L["IN_RUSH"] = "• In rush"
+L["OUT_RUSH"] = "• Out of rush"
+L["TEAM"] = "• Team : "
+
+L["HEADER_CHARACTER"] = "Character"
+L["HEADER_PARTICIPANT"] = "Participant"
+L["HEADER_LVL"] = "Lvl"
+L["HEADER_CLASS"] = "Class"
+L["HEADER_GOLD"] = "Gold"
+L["HEADER_ITEMS"] = "Items"
+L["HEADER_PROFESSIONS"] = "Professions"
+
+L["DEATHS"] = "Deaths"
+
+L["STAT_TITLE"] = "Statistics of team participants"
+L["STAT_NOTIFY_LABEL"] = "Notifications"
+L["STAT_NOTIFY_TITLE"] = "Events notifications"
+L["STAT_NOTIFY_DESC"]  = "Enable or disable the display of rush events."
+
+L["STAT_LEVEL_TITLE"] = "Level cumulated"
+L["STAT_LEVEL_DESC"] = "Sum of level of living players"
+L["STAT_GOLD_TITLE"] = "Total gold"
+L["STAT_GOLD_DESC"] = "Sum of gold of living players"
+L["STAT_DEAD_TITLE"] = "Dead characters"
+L["STAT_DEAD_DESC"] = "Number of dead characters"
+L["STAT_PROF_TITLE"] = "Professions"
+L["STAT_PROF_DESC"] = "Sum of level of professions of living players"
+L["STAT_ITEM_TITLE"] = "Items of living players"
+L["STAT_ITEM_TEXT"] = "Items : |cff9d9d9d%d|r grey, |cffffffff%d|r white, |cff1eff00%d|r green, |cff0070dd%d|r blue, |cffa335ee%d|r purple"
+
+L["TRACKING_ENABLED"] = "Tracking enabled"
+L["TRACKING_ENABLE"] = "Enable tracking"
+
+L["STAT_STATUS_NONSYNC"] = "Not synchronized"
+L["STAT_STATUS_TOOLTIP_NONSYNC"] = "Whitelist empty, connect to other players with /rconnect <name>"
+L["STAT_STATUS_SYNC"] = "Synchronized"
+L["STAT_STATUS_TOOLTIP_SYNC"] = "You are synchronized with other players in the Rush"
+L["STAT_STATUS_NOTGUILD"] = "Not synchronized"
+L["STAT_STATUS_TOOLTIP_NOTGUILD"] = "You are not in a guild, you cannot be synchronized with other players in the Rush"
+L["STAT_STATUS_DEGRADED"] = "Partially synchronized"
+L["STAT_STATUS_TOOLTIP_DEGRADED"] = "After Joining a guild. You must disconnect/reconnect your character to fully synchronize with other players in the Rush"
+
+-- Progression
+L["LVL10"] = "has reached level 10"
+L["LVL20"] = "has reached level 20"
+L["LVL30"] = "has reached level 30"
+L["LVL40"] = "has reached level 40"
+L["LVL45"] = "has reached level 45"
+L["LVL50"] = "has reached level 50"
+L["LVL55"] = "has reached level 55"
+L["LVL60"] = "has reached level 60"
+
+L["PROF75"]  = "has leveled a profession to 75"
+L["PROF100"] = "has leveled a profession to 100"
+L["PROF150"] = "has leveled a profession to 150"
+L["PROF200"] = "has leveled a profession to 200"
+L["PROF250"] = "has leveled a profession to 250"
+L["PROF300"] = "has leveled a profession to 300"
+
+L["DEATH"] = "has died"
+L["DEATHDUNGEON"] = "has died in a dungeon"
+
+L["11519"] = "has completed Ragefire Chasm"
+L["3654"]  = "has completed Wailing Caverns"
+L["639"]   = "has completed The Deadmines"
+L["4275"]  = "has completed Shadowfang Keep"
+L["1716"]  = "has completed The Stockade"
+L["4829"]  = "has completed Blackfathom Deeps"
+L["7800"]  = "has completed Gnomeregan"
+L["4421"]  = "has completed Razorfen Kraul"
+
+L["4543"] = "has completed Scarlet Monastery – Graveyard"
+L["6487"] = "has completed Scarlet Monastery – Library"
+L["3975"] = "has completed Scarlet Monastery – Armory"
+L["3976"] = "has completed Scarlet Monastery – Cathedral"
+
+L["7358"]  = "has completed Razorfen Downs"
+L["2748"]  = "has completed Uldaman"
+L["7267"]  = "has completed Zul'Farrak"
+L["12201"] = "has completed Maraudon"
+L["5709"]  = "has completed The Temple of Atal'Hakkar"
+L["9019"]  = "has completed Blackrock Depths"
+L["9568"]  = "has completed Lower Blackrock Spire"
+L["10363"] = "has completed Upper Blackrock Spire"
+L["11492"] = "has completed Dire Maul East"
+L["11486"] = "has completed Dire Maul West"
+L["11501"] = "has completed Dire Maul North"
+L["1853"]  = "has completed Scholomance"
+L["10440"] = "has completed Stratholme"
+
+L["11502"] = "has defeated Ragnaros"
+L["14834"] = "has defeated Hakkar"
+L["11583"] = "has defeated Nefarian"
+L["15990"] = "has defeated Kel'Thuzad"
+L["15727"] = "has defeated C'Thun"
+L["15339"] = "has defeated Ossirian the Unscarred"
+L["10184"] = "has defeated Onyxia"

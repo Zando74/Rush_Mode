@@ -1,0 +1,52 @@
+## Interface: 11508
+## Title: Rush Mode
+## Notes: Rush Mode is a simple addon that allows you to organize hardcore rush competitions.
+## Author: Zando
+## SavedVariables: RushModeDB
+## Version: 1.0.0
+
+## Libraries
+libs/Ace3/LibStub/LibStub.lua
+libs/Ace3/CallbackHandler-1.0/CallbackHandler-1.0.xml
+libs/Ace3/AceComm-3.0/AceComm-3.0.xml
+libs/Ace3/AceLocale-3.0/AceLocale-3.0.xml
+Libs/LibDeflate/LibDeflate.lua
+Libs/LibSerialize/LibSerialize.lua
+Libs/LibDataBroker-1.1/LibDataBroker-1.1.lua
+Libs/LibDBIcon-1.0/LibDBIcon-1.0/LibDBIcon-1.0.lua
+
+
+locales/frFR.lua
+locales/enUS.lua
+
+core.lua
+shared/cmd/cmd.lua
+shared/comm/comm.lua
+shared/events/events.lua
+shared/utils/utils.lua
+whitelist/cmd/whitelistCmd.lua
+whitelist/comm/whitelistComm.lua
+whitelist/cron/whitelistCron.lua
+player/comm/playerComm.lua
+player/cron/playerCron.lua
+progression/comm/progressionComm.lua
+progression/events/progressionEvents.lua
+progression/enum/progressionEnum.lua
+progression/quest/progressionQuest.lua
+progression/cron/progressionCron.lua
+fraud/trade/fraudTradeEvents.lua
+fraud/mail/fraudMailEvents.lua
+fraud/cron/fraudCron.lua
+fraud/comm/fraudComm.lua
+ui/mainFrame.lua
+ui/headers.lua
+ui/scrollFrame.lua
+ui/row.lua
+ui/tabs.lua
+ui/minimap.lua
+ui/stats.lua
+ui/update.lua
+ui/topScreenAlert.lua
+ui/playerToolTip.lua
+ui/rushInitForm.lua
+
