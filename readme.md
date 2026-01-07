@@ -5,7 +5,7 @@
 Rush Mode is a World of Warcraft Classic addon designed to **coordinate**, **track**, and **secure** competitive **rush events** involving multiple players, streamers, and teams.
 
 If you are looking for an external audit and tracking system providing security and fair play for your event, you can check out [Rush Mode App](https://github.com/zando74/rush-mode-app).  
-You can see a live demo of an emulated rush event here: [rush-mode](https://rush-mode.zando.fr)
+You can see a live demo of an emulated rush event here: [rush-mode](https://rush-mode.com)
 
 **Primary Goals:**
 
