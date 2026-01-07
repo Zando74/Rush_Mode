@@ -1,6 +1,6 @@
 # 🌟 **Rush Mode – WoW HC Addon**
 
-![Demo Screenshot](img/demo.png)
+![Demo Screenshot](https://raw.githubusercontent.com/Zando74/Rush_Mode/refs/heads/main/img/demo.png)
 
 Rush Mode is a World of Warcraft Classic addon designed to **coordinate**, **track**, and **secure** competitive **rush events** involving multiple players, streamers, and teams.
 
@@ -72,7 +72,7 @@ The first mandatory step is **initialization**.
 ```
 
 This opens an initialization window.  
-![Initialization Screenshot](img/init.png)
+![Initialization Screenshot](https://raw.githubusercontent.com/Zando74/Rush_Mode/refs/heads/main/img/init.png)
 
 You must provide:
 
@@ -168,7 +168,7 @@ Once done, no further action is required for this character.
 ## 7. ✅ **Status Indicators**
 
 If everything is configured correctly, you should see the following state:  
-![Status Screenshot](img/status.png)
+![Status Screenshot](https://raw.githubusercontent.com/Zando74/Rush_Mode/refs/heads/main/img/status.png)
 
 - **🟢 – Synchronized**
 
