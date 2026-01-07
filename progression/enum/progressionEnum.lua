@@ -1,7 +1,7 @@
 ProgressionEnum = {
     -- Levels
     ["level"] = {
-        [10] = "LVL10",
+        [15] = "LVL15",
         [20] = "LVL20",
         [30] = "LVL30",
         [40] = "LVL40",

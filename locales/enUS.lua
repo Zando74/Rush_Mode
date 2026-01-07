@@ -11,6 +11,9 @@ L["JOINED_TEAM"] = "Joined %s team."
 L["CHAR_TRACKING_STARTED"] = "tracking enabled for this character."
 L["CHAR_TRACKING_STOPPED"] = "tracking disabled for this character."
 
+L["LOGOUT_POPUP"] = "You have just joined a guild.\n\nFor Rush Mode data consistency, it is recommended to relog your character."
+L["LOGOUT_BUTTON"] = "Understood"
+
 L["INIT_TITLE"] = "Rush Initialization"
 L["INIT_PARTICIPANT"] = "Participant Name / Streamer"
 L["INIT_TEAM"] = "Team"
@@ -39,7 +42,10 @@ L["HEADER_CLASS"] = "Class"
 L["HEADER_GOLD"] = "Gold"
 L["HEADER_ITEMS"] = "Items"
 L["HEADER_PROFESSIONS"] = "Professions"
+L["HEADER_ZONE"] = "Zone"
 
+L["REFRESH_WHITELIST"] = "Refresh whitelist"
+L["WHITELIST_ASKED"] = "The whitelist has been asked."
 L["DEATHS"] = "Deaths"
 
 L["STAT_TITLE"] = "Statistics of team participants"
@@ -71,7 +77,7 @@ L["STAT_STATUS_DEGRADED"] = "Partially synchronized"
 L["STAT_STATUS_TOOLTIP_DEGRADED"] = "After Joining a guild. You must disconnect/reconnect your character to fully synchronize with other players in the Rush"
 
 -- Progression
-L["LVL10"] = "has reached level 10"
+L["LVL15"] = "has reached level 15"
 L["LVL20"] = "has reached level 20"
 L["LVL30"] = "has reached level 30"
 L["LVL40"] = "has reached level 40"

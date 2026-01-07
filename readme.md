@@ -4,6 +4,9 @@
 
 Rush Mode is a World of Warcraft Classic addon designed to **coordinate**, **track**, and **secure** competitive **rush events** involving multiple players, streamers, and teams.
 
+If you are looking for an external audit and tracking system providing security and fair play for your event, you can check out [Rush Mode App](https://github.com/zando74/rush-mode-app).  
+You can see a live demo of an emulated rush event here: [rush-mode](https://rush-mode.zando.fr)
+
 **Primary Goals:**
 
 - **Synchronized** progression tracking across characters and rerolls
@@ -11,7 +14,7 @@ Rush Mode is a World of Warcraft Classic addon designed to **coordinate**, **tra
 - **Fair play** enforcement through shared trust (whitelist) and guild-based communication
 - **Event auditing** for administrators and organizers
 
-This addon supports French and English language.
+This addon supports both French and English.
 
 ---
 
@@ -36,15 +39,15 @@ This addon supports French and English language.
 
 Rush Mode allows a group of players (often streamers) to engage in a **shared rush** with strict rules:
 
-- track **full leveling** to 60
-- Completing **objectives** related to professions, levels, and dungeons
-- Preventing **external assistance** (gold and items from mail or trades)
+- Track **full leveling** to 60
+- Complete **objectives** related to professions, levels, and dungeons
+- Prevent **external assistance** (gold and items from mail or trades)
 
 All critical actions are **tracked locally** and **securely shared** between rush members.
 
 ---
 
-## 2. 🛠️ **Installation (if not using Curseforge)**
+## 2. 🛠️ **Installation (if not using CurseForge)**
 
 1. **Download** the addon
 2. **Place** it into:
@@ -62,7 +65,7 @@ World of Warcraft/_classic_era_/Interface/AddOns/Rush_Mode
 
 The first mandatory step is **initialization**.
 
-**Run the following command in game:**
+**Run the following command in-game:**
 
 ```
 /rinit
@@ -103,9 +106,11 @@ Once tracking is enabled:
 
 ---
 
-## 5. 🔗 **Whitelist & Synchronization** – `/rconnect`
+## 5. 🔗 **Whitelist & Synchronization**
 
 If this is your **first character** participating in the rush, you must **connect** it with another rush member.
+
+By using the **whitelist sharing button**, or if you are not yet in a guild, you can also share your whitelist with other players using the same rush ID by running `/rconnect`.
 
 **Command:**
 
@@ -141,7 +146,7 @@ Guild communication is required for:
 
 ### ⚙️ **Known WoW Classic Limitation**
 
-When joining a guild, WoW Classic does **not properly reinitialize** addon communication GUILD channels.
+When joining a guild, WoW Classic does **not properly reinitialize** addon GUILD communication channels.
 
 #### ⚡ **Impact**
 
@@ -156,7 +161,7 @@ After **joining the guild**:
 2. **Log back in**
 
 This fully **resets** the communication system.  
-Once done, no further action is required on this character.
+Once done, no further action is required for this character.
 
 ---
 
@@ -183,7 +188,7 @@ If everything is configured correctly, you should see the following state:
 Participants must:
 
 - **Reach level 60**
-- Complete **rush-defined objectives** (levels, professions, dungeons...)
+- Complete **rush-defined objectives** (levels, professions, dungeons…)
 
 ### **Anti-Fraud Enforcement**
 
@@ -192,7 +197,7 @@ If you accept:
 - **Trades**
 - **Mail** (gold or items)
 
-From **non-rush participants**, the action will be:
+from **non-rush participants**, the action will be:
 
 - **Logged**
 - Shared with **administrators**
@@ -205,6 +210,8 @@ This includes:
 - **Mail-based assistance**
 
 Once tracking is enabled, all actions are **monitored automatically**.
+
+If you want to go further, contact me on Discord or Twitter to enable an external tracking solution.
 
 ---
 
@@ -228,8 +235,9 @@ You can **synchronize** your whitelist with new players at any time.
 
 ### **Reset Addon**
 
-Use it only if Rush is finished and you want to **start another one**. If others are
-still in the rush, they will continue to receive your character's data because it is still in the whitelist.
+Use this only if the rush is finished and you want to **start another one**.
+
+If others are still participating, they will continue to receive your character's data because it remains in the whitelist.
 
 ```
 /rreset
@@ -272,8 +280,8 @@ If you want to:
 - **Discord**: zando7914
 - **Twitter / X**: [zandodev](https://x.com/zandodev)
 
-I am open to collaboration for **advanced or custom event setups**.
-As I did for the KTV x JL Rush Event organized by [Kameto](https://www.twitch.tv/kamet0).
+I am open to collaboration for **advanced or custom event setups**,  
+as I did for the **KTV x JL Rush Event** organized by [Kameto](https://www.twitch.tv/kamet0).
 
 ---
 

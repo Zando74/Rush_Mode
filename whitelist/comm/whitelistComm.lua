@@ -41,3 +41,21 @@ function RushMode:OnWhitelistReceived(sender, msg)
     if not newPlayerWhitelisted then return end
     RushMode:ShareWhitelist(sender)
 end
+
+function RushMode:AskForWhitelist()
+    if RushModeDB.rushID == "" then
+        return
+    end
+    local msg = "ASKWL:-" .. string.sub(RushModeDB.rushID, 1, 8)
+    Comm:SendGuildMessage(Comm.prefixTracking, msg)
+    print(L["WHITELIST_ASKED"])
+end
+
+function RushMode:OnWhitelistAsked(sender, msg)
+    if msg ~= string.sub(RushModeDB.rushID, 1, 8) then
+        return
+    end
+    if sender ~= UnitName("player") then
+        RushMode:ShareWhitelist(sender)
+    end
+end

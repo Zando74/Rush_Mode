@@ -1,3 +1,21 @@
+local function SetTruncatedText(fontString, text, maxWidth)
+    fontString:SetText(text)
+
+    if fontString:GetStringWidth() <= maxWidth then
+        fontString.fullText = nil
+        return
+    end
+
+    local truncated = text
+    while fontString:GetStringWidth() > maxWidth and #truncated > 0 do
+        truncated = truncated:sub(1, -2)
+        fontString:SetText(truncated .. "…")
+    end
+
+    fontString.fullText = text
+end
+
+
 function UpdateUI()
     if not RushModeFrame:IsShown() then return end
     BuildTeamTabs()
@@ -56,6 +74,10 @@ function UpdateUI()
             local player = data.player
             row.player:SetText(player)
             row.level:SetText(data.level or "")
+
+            local mapInfo = C_Map.GetMapInfo(data.mapID)
+            local zoneName = mapInfo and mapInfo.name or "Unknown"
+            SetTruncatedText(row.zone, zoneName, 80)
             
             local classID = data.class
             local className = GetClassInfo(classID)

@@ -33,6 +33,16 @@ local TrackButton = CreateFrame("Button", nil, StatsFrame, "UIPanelButtonTemplat
 TrackButton:SetSize(160, 22)
 TrackButton:SetPoint("RIGHT", NotifyCheckBox, "LEFT", -10, 0)
 
+local refreshWLButton = CreateFrame("Button", nil, StatsFrame, "UIPanelButtonTemplate")
+refreshWLButton:SetSize(160, 22)
+refreshWLButton:SetPoint("RIGHT", TrackButton, "LEFT", -10, 0)
+refreshWLButton:SetText(L["REFRESH_WHITELIST"])
+refreshWLButton:GetFontString():SetTextColor(1, 0.82, 0)
+
+refreshWLButton:SetScript("OnClick", function()
+    RushMode:AskForWhitelist()
+end)
+
 local function GetPlayerID()
     local _, _, playerId = strsplit("-", UnitGUID("player"))
     return playerId
@@ -217,19 +227,21 @@ function UpdateStats()
                     local splitItems = {strsplit(",", data.items)}
                     for _, itemID in ipairs(splitItems) do
                         local itemLink = select(2, GetItemInfo(itemID))
-                        local colorCode = itemLink:match("|c(%x%x%x%x%x%x%x%x)")
-                        if colorCode then
-                            colorCode = colorCode:lower()
-                            if colorCode == "ff9d9d9d" then
-                                itemCounts.gray = itemCounts.gray + 1
-                            elseif colorCode == "ffffffff" then
-                                itemCounts.white = itemCounts.white + 1
-                            elseif colorCode == "ff1eff00" then
-                                itemCounts.green = itemCounts.green + 1
-                            elseif colorCode == "ff0070dd" then
-                                itemCounts.blue = itemCounts.blue + 1
-                            elseif colorCode == "ffa335ee" then
-                                itemCounts.purple = itemCounts.purple + 1
+                        if itemLink then
+                            local colorCode = itemLink:match("|c(%x%x%x%x%x%x%x%x)")
+                            if colorCode then
+                                colorCode = colorCode:lower()
+                                if colorCode == "ff9d9d9d" then
+                                    itemCounts.gray = itemCounts.gray + 1
+                                elseif colorCode == "ffffffff" then
+                                    itemCounts.white = itemCounts.white + 1
+                                elseif colorCode == "ff1eff00" then
+                                    itemCounts.green = itemCounts.green + 1
+                                elseif colorCode == "ff0070dd" then
+                                    itemCounts.blue = itemCounts.blue + 1
+                                elseif colorCode == "ffa335ee" then
+                                    itemCounts.purple = itemCounts.purple + 1
+                                end
                             end
                         end
                     end

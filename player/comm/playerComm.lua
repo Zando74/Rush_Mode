@@ -4,6 +4,7 @@ function RushMode:SendStatusUpdate()
     local classID = select(3, UnitClass("player")) 
     local isDead = UnitIsDeadOrGhost("player") and 1 or 0
     local _, _, playerId = strsplit("-", UnitGUID("player"))
+    local mapID = C_Map.GetBestMapForUnit("player") or 0
     local now = time()
 
     local profs = RushMode:GetPlayerProfessionsClassic()
@@ -22,7 +23,7 @@ function RushMode:SendStatusUpdate()
     local itemStr = table.concat(items, ",")
 
     local msg = string.format(
-        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d",
+        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d$%d",
         RushModeDB.team,
         RushModeDB.player,
         playerId,
@@ -33,6 +34,7 @@ function RushMode:SendStatusUpdate()
         profStr,
         copper,
         itemStr,
+        mapID,
         now
     )
 
@@ -66,7 +68,7 @@ function RushMode:GetRandomOfflinePlayer()
     totalGold = totalGold + g*10000 + s*100 + c
 
     local msg = string.format(
-        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d",
+        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d$%d",
         data.team,
         data.player,
         data.playerId,
@@ -77,6 +79,7 @@ function RushMode:GetRandomOfflinePlayer()
         data.professions,
         totalGold,
         data.items,
+        data.mapID,
         data.lastUpdate
     )
 
@@ -100,7 +103,7 @@ function RushMode:OnPlayerStatusWhisperReceived(msg)
 end
 
 function RushMode:processMessage(message)
-    local team, player, playerId, name, level, classId, isDead, profStr, copper, itemStr, now = strsplit("$", message)
+    local team, player, playerId, name, level, classId, isDead, profStr, copper, itemStr, mapID, now = strsplit("$", message)
 
     local existing = RushModeDB.players[playerId]
     if existing and existing.lastUpdate >= tonumber(now) then return end
@@ -120,6 +123,7 @@ function RushMode:processMessage(message)
         isDead = tonumber(isDead),
         money = moneyStr,
         items = itemStr,
+        mapID = tonumber(mapID),
         professions = profStr,
         lastUpdate = tonumber(now),
     }
@@ -129,4 +133,5 @@ function RushMode:processMessage(message)
         data.firstSeen = RushModeDB.players[playerId].firstSeen
     end
     RushModeDB.players[playerId] = data
+    UpdateUI()
 end

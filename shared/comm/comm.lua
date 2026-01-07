@@ -62,15 +62,19 @@ end
 function Comm:OnDeserializedMessage(prefix, msg, dist, sender)
     if prefix == Comm.prefixTracking then
         if dist == "GUILD" then
-            if RushModeDB.whitelist[sender] == nil or not RushModeDB.whitelist[sender] then
-                return
-            end
-            if sender == UnitName("player") then
-                Comm.lastGuildProgressionMessage = time()
+            if string.sub(msg, 1, 7) == "ASKWL:-" then
+                RushMode:OnWhitelistAsked(sender, string.sub(msg, 8))
             else
-                Comm.PlayerInGuild[sender] = true
+                if RushModeDB.whitelist[sender] == nil or not RushModeDB.whitelist[sender] then
+                    return
+                end
+                if sender == UnitName("player") then
+                    Comm.lastGuildProgressionMessage = time()
+                else
+                    Comm.PlayerInGuild[sender] = true
+                end
+                RushMode:OnPlayerStatusUpdateReceived(msg)
             end
-            RushMode:OnPlayerStatusUpdateReceived(msg)
         elseif dist == "WHISPER" then
             if string.sub(msg, 1, 4) == "WL:-" then
                 RushMode:OnWhitelistReceived(sender, string.sub(msg, 5))

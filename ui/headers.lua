@@ -17,6 +17,7 @@ local Headers = {
     { text = L["HEADER_LVL"],                       width = 25  },
     { text = L["HEADER_CLASS"],                    width = 70  },
     { text = L["HEADER_GOLD"],                      width = 80  },
+    { text = L["HEADER_ZONE"],                       width = 80 },
     { text = L["HEADER_ITEMS"],      width = 460 },
     { text = L["HEADER_PROFESSIONS"],                   width = 100 },
 }

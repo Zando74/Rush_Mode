@@ -1,6 +1,6 @@
 MainFrame = CreateFrame("Frame", "RushModeFrame", UIParent, "BasicFrameTemplateWithInset")
 MainFrame:SetClampedToScreen(true) 
-MainFrame:SetSize(930, 450)
+MainFrame:SetSize(1010, 450)
 MainFrame:SetPoint("CENTER")
 tinsert(UISpecialFrames, "RushModeFrame")
 MainFrame:Hide()

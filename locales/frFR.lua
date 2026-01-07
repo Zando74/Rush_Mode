@@ -11,6 +11,8 @@ L["JOINED_TEAM"] = "enregistré dans l'équipe %s."
 L["CHAR_TRACKING_STARTED"] = "tracking activé pour ce personnage."
 L["CHAR_TRACKING_STOPPED"] = "tracking désactivé pour ce personnage."
 
+L["LOGOUT_POPUP"] = "Vous avez rejoint une guilde.\n\nPour garantir la cohérence des données, il est recommandé de déco/reco votre personnage."
+L["LOGOUT_BUTTON"] = "Compris"
 
 L["INIT_TITLE"] = "Initialisation du Rush"
 L["INIT_PARTICIPANT"] = "Nom du participant / streamer"
@@ -40,7 +42,10 @@ L["HEADER_CLASS"] = "Classe"
 L["HEADER_GOLD"] = "Gold"
 L["HEADER_ITEMS"] = "Pièces d'équipements"
 L["HEADER_PROFESSIONS"] = "Métiers"
+L["HEADER_ZONE"] = "Zone"
 
+L["REFRESH_WHITELIST"] = "Rafraîchir la whitelist"
+L["WHITELIST_ASKED"] = "La whitelist a été demandée."
 L["DEATHS"] = "Morts"
 
 L["STAT_TITLE"] = "Statistiques de l'équipe"
@@ -73,7 +78,7 @@ L["STAT_STATUS_TOOLTIP_DEGRADED"] = "Après avoir rejoint une guilde. Vous devez
 
 
 -- Progression
-L["LVL10"] = "a atteint le niveau 10"
+L["LVL15"] = "a atteint le niveau 15"
 L["LVL20"] = "a atteint le niveau 20"
 L["LVL30"] = "a atteint le niveau 30"
 L["LVL40"] = "a atteint le niveau 40"

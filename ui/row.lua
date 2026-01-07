@@ -19,15 +19,33 @@ for i = 1, MAX_ROWS do
     row.money = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     row.money:SetPoint("LEFT", 250, 0)
 
+    row.zone = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    row.zone:SetPoint("LEFT", 330, 0)
+    row.zone:SetJustifyH("LEFT")
+    row.zone:SetWordWrap(false)
+    row.zone:EnableMouse(true)
+
+    row.zone:SetScript("OnEnter", function(self)
+        if self.fullText then
+            GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+            GameTooltip:SetText(self.fullText, 1, 1, 1, true)
+            GameTooltip:Show()
+        end
+    end)
+
+    row.zone:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+
     row.itemContent = CreateFrame("Frame", nil, row)
-    row.itemContent:SetPoint("TOPLEFT", 330, -8)
+    row.itemContent:SetPoint("TOPLEFT", 410, -8)
     row.itemContent:SetSize(600, MAX_ITEM_HEIGHT)
 
 
     row.itemButtons = {}
 
     row.professions = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    row.professions:SetPoint("LEFT", 790, 0)
+    row.professions:SetPoint("LEFT", 870, 0)
 
     local bg = row:CreateTexture(nil, "BACKGROUND")
     bg:SetAllPoints()
