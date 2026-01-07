@@ -15,3 +15,9 @@
 ### Fixed
 
 - Bug preventing proper refresh of the characters list
+
+## [1.1.1] – 2026-01-07
+
+### Fixed
+
+- Bug preventing proper display of the zone when player is in an instance

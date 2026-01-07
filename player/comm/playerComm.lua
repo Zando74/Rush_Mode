@@ -5,6 +5,12 @@ function RushMode:SendStatusUpdate()
     local isDead = UnitIsDeadOrGhost("player") and 1 or 0
     local _, _, playerId = strsplit("-", UnitGUID("player"))
     local mapID = C_Map.GetBestMapForUnit("player") or 0
+    if mapID == 0 then
+        local _, _, _, _, _, _, _, instanceID, _ = GetInstanceInfo()
+        if instanceID then
+            mapID = instanceID
+        end
+    end
     local now = time()
 
     local profs = RushMode:GetPlayerProfessionsClassic()

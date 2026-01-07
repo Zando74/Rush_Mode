@@ -76,7 +76,12 @@ function UpdateUI()
             row.level:SetText(data.level or "")
 
             local mapInfo = C_Map.GetMapInfo(data.mapID)
-            local zoneName = mapInfo and mapInfo.name or "Unknown"
+            local zoneName = "Unknown"
+            if not mapInfo or not mapInfo.name then
+                zoneName = L[DungeonIdToName[data.mapID]] or "Unknown"
+            else
+                zoneName = mapInfo.name
+            end
             SetTruncatedText(row.zone, zoneName, 80)
             
             local classID = data.class
