@@ -3,7 +3,7 @@
 ## Notes: Rush Mode is a simple addon that allows you to organize hardcore rush competitions.
 ## Author: Zando
 ## SavedVariables: RushModeDB
-## Version: 1.1.1
+## Version: 1.1.2
 
 ## Libraries
 libs/Ace3/LibStub/LibStub.lua

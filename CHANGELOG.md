@@ -21,3 +21,9 @@
 ### Fixed
 
 - Bug preventing proper display of the zone when player is in an instance
+
+## [1.1.2] – 2026-01-08
+
+### Fixed
+
+- Bug preventing proper display of team tabs when team number is greater than 9
