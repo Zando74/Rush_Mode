@@ -37,9 +37,9 @@ f:SetScript("OnEvent", function(_, event, ...)
             )
         end
     elseif event == "PLAYER_LEVEL_UP" then
-        local level = UnitLevel("player")
-        if ProgressionEnum["level"][level] ~= nil then
-            RushMode:SendProgressionUpdate(ProgressionEnum["level"][level])
+        local newLevel = ...
+        if ProgressionEnum["level"][newLevel] ~= nil then
+            RushMode:SendProgressionUpdate(ProgressionEnum["level"][newLevel])
         end
     elseif event == "CHAT_MSG_SKILL" then
         RushMode:CheckProfessionProgression()

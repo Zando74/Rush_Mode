@@ -27,3 +27,13 @@
 ### Fixed
 
 - Bug preventing proper display of team tabs when team number is greater than 9
+
+## [1.2.0] – 2026-01-09
+
+### Added
+
+- Tracking of player coordinates
+
+### Fixed
+
+- Bug preventing proper Level achievement triggering

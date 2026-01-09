@@ -1,3 +1,16 @@
+local function GetPlayerCoordsSafe(mapID)
+    local pos = C_Map.GetPlayerMapPosition(mapID, "player")
+    if not pos then
+        return 0, 0
+    end
+
+    if pos.x == 0 and pos.y == 0 then
+        return 0, 0
+    end
+
+    return pos.x * 100, pos.y * 100
+end
+
 function RushMode:SendStatusUpdate()
     local name = UnitName("player")
     local level = UnitLevel("player")
@@ -11,6 +24,8 @@ function RushMode:SendStatusUpdate()
             mapID = instanceID
         end
     end
+
+    local x, y = GetPlayerCoordsSafe(mapID)
     local now = time()
 
     local profs = RushMode:GetPlayerProfessionsClassic()
@@ -29,7 +44,7 @@ function RushMode:SendStatusUpdate()
     local itemStr = table.concat(items, ",")
 
     local msg = string.format(
-        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d$%d",
+        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d$%d$%d$%d",
         RushModeDB.team,
         RushModeDB.player,
         playerId,
@@ -41,7 +56,9 @@ function RushMode:SendStatusUpdate()
         copper,
         itemStr,
         mapID,
-        now
+        now,
+        x,
+        y
     )
 
     local randomDisconnected = RushMode:GetRandomOfflinePlayer()
@@ -74,7 +91,7 @@ function RushMode:GetRandomOfflinePlayer()
     totalGold = totalGold + g*10000 + s*100 + c
 
     local msg = string.format(
-        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d$%d",
+        "%s$%s$%s$%s$%d$%d$%d$%s$%s$%s$%d$%d$%d$%d",
         data.team,
         data.player,
         data.playerId,
@@ -86,7 +103,9 @@ function RushMode:GetRandomOfflinePlayer()
         totalGold,
         data.items,
         data.mapID,
-        data.lastUpdate
+        data.lastUpdate,
+        data.x,
+        data.y
     )
 
     return msg
@@ -109,7 +128,7 @@ function RushMode:OnPlayerStatusWhisperReceived(msg)
 end
 
 function RushMode:processMessage(message)
-    local team, player, playerId, name, level, classId, isDead, profStr, copper, itemStr, mapID, now = strsplit("$", message)
+    local team, player, playerId, name, level, classId, isDead, profStr, copper, itemStr, mapID, now, x, y = strsplit("$", message)
 
     local existing = RushModeDB.players[playerId]
     if existing and existing.lastUpdate >= tonumber(now) then return end
@@ -118,7 +137,6 @@ function RushMode:processMessage(message)
     local silver = math.floor((copper / 100) % 100)
     local c = copper % 100
     local moneyStr = gold.."g "..silver.."s "..c.."c"
-
     local data = {
         playerId = playerId,
         team = team,
@@ -132,6 +150,8 @@ function RushMode:processMessage(message)
         mapID = tonumber(mapID),
         professions = profStr,
         lastUpdate = tonumber(now),
+        x = tonumber(x),
+        y = tonumber(y),
     }
     if RushModeDB.players[playerId] == nil then
         data.firstSeen = tonumber(now)
